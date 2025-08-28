@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Manrope', sans-serif;
+}
+
+.znajdz2 {
+    width: 100vw;
+    background-color: #f5f5f5;
+}
+
+.znajdz {
+    width: 100vw;
+    height: 70vh;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.znajdz .error {
+    color: #910a2d;
+    font-size: 3vh;
+}
+
+.znajdz .search {
+    font-size: 4vh;
+    text-align: center;
+    background-color: #f5f5f5;
+    width: 20vw;
+    height: 66.9vh;
+    float: left;
+}
+
+.znajdz .search .dealer-find1 {
+    padding-left: 5vw;
+}
+
+.znajdz .search .placeholder {
+    font-size: 2.5vh;
+    border-radius: 1vh;
+    padding: 0.5vh;
+    border: solid #910a2d 0.1px;
+    background-color: white;
+    color: #101010;
+    text-decoration: none;
+}
+
+.znajdz .search .placeholder:hover {
+    color: white;
+    -webkit-transition-duration: 0.9s;
+    transition-duration: 0.9s;
+    background-color: #910a2d;
+    border: none;
+}
+
+.znajdz .search .dealer-button {
+    font-size: 2vh;
+    border-radius: 1vh;
+    width: 5vw;
+    text-align: center;
+    padding: 1vh;
+    border: solid #910a2d 0.1px;
+    background-color: white;
+    color: #101010;
+    text-decoration: none;
+}
+
+.znajdz .search .dealer-button:hover {
+    color: white;
+    -webkit-transition-duration: 0.9s;
+    transition-duration: 0.9s;
+    background-color: #910a2d;
+    border: none;
+}
+
+.znajdz .place {
+    font-size: 3vh;
+    text-align: center;
+    background: url("../image/model1.png") 100% no-repeat;
+    width: 80vw;
+    height: 70vh;
+    text-align: center;
+    color: white;
+    padding-top: 3vh;
+    float: left;
+}
+
+.znajdz .place #mapa {
+    max-height: 70vh;
+    min-height: 70vh;
+    min-width: 80vw;
+    max-width: 80vw;
+}
+
+.znajdz .lokalizacja {
+    border-top: 0.02px solid #DCDCDC;
+    border-bottom: 0.02px solid #c4bbbb;
+    font-size: 2.5vh;
+    padding: 3vh;
+    margin: 1vh;
+}
+
+.znajdz .place2 {
+    font-size: 3vh;
+    text-align: center;
+    width: 80vw;
+    height: 70vh;
+    float: left;
+}
+
+.znajdz .place2 #mapa2 {
+    min-height: 70vh;
+    min-width: 80vw;
+}

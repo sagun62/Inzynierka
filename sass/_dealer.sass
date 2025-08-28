@@ -1,0 +1,191 @@
+body
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    font-family: 'Manrope', sans-serif
+
+.znajdz2
+
+    width: 100vw
+
+    background-color: #f5f5f5
+
+.znajdz
+
+    width: 100vw
+    height: 70vh
+    background-color: #f5f5f5
+    position: relative
+
+    .error
+
+        color: #910a2d
+        font-size: 3vh
+
+    .search
+        font-size: 4vh
+        text-align: center
+        background-color: #f5f5f5
+        width: 20vw
+        align-items: center
+        height: 66.9vh
+        float: left
+        .dealer-find1
+            text-align: center
+            align-items: center
+            margin: auto
+
+        .placeholder
+            font-size: 2.5vh
+            border-radius: 1vh
+            padding: 0.5vh
+            border: solid #910a2d 0.1px
+            background-color: white
+            color: #101010
+            text-decoration: none
+            &:hover
+                color: white
+                transition-duration: 0.9s
+                background-color: #910a2d
+                border: none
+        .dealer-button
+
+            font-size: 2vh
+            border-radius: 1vh
+            width: 5vw
+            text-align: center
+            padding: 1vh
+            border: solid #910a2d 0.1px
+            background-color: white
+            color: #101010
+            text-decoration: none
+            &:hover
+                color: white
+                transition-duration: 0.9s
+                background-color: #910a2d
+                border: none
+
+    .place
+        font-size: 3vh
+        text-align: center
+        background: url('../image/model1.png') 100% no-repeat
+        width: 70vw
+        height: 70vh
+        text-align: center
+        color: white
+        padding-top: 3vh
+        float: left
+        //color: #910a2d
+
+        #mapa
+
+            max-height: 70vh
+            min-height: 70vh
+            min-width: 80vw
+            max-width: 80vw
+
+    .lokalizacja
+
+        border-top: 0.02px solid #DCDCDC
+        border-bottom: 0.02px solid rgb(196, 187, 187)
+        font-size: 14vh
+        padding: 3vh
+        margin: 1vh
+        td
+            font-size: 1.5rem
+
+    .place2
+
+        font-size: 3vh
+        text-align: center
+
+        width: 80vw
+        height: 70vh
+        float: left
+
+        #mapa2
+
+            min-height: 70vh
+            min-width: 80vw
+.search4
+    font-size: 4vh
+    text-align: center
+    background-color: #f5f5f5
+    width: 30vw
+    align-items: center
+    height: 66.9vh
+    float: left
+    .dealer-find1
+        text-align: center
+        align-items: center
+        margin: auto
+@media screen and (min-width: 450px)
+    .home
+        .znajdz2
+            .search
+                .place2
+                    height: 50vh
+                    #mapa2
+                        min-height: 50vh
+@media screen and (min-width: 1250px)
+    .home
+        .znajdz
+            .lokalizacja
+                float: left
+                font-size: 3.5vh
+
+@media screen and (max-width: 1250px)
+    .home
+        .znajdz2
+            height: 100vh
+        .znajdz
+            .search
+                width: 100%
+                .place2
+                    height: 50vh
+                    #mapa2
+                        min-height: 50vh
+                td
+                    font-size: 1.1rem
+                .but_pytaj
+                    width: 50%
+                .placeholder
+                    width: 50%
+                .dealer-button
+                    width: 50%
+            .search4
+                width: 100%
+                .but_pytaj
+                    width: 50%
+                .placeholder
+                    width: 50%
+                .dealer-button
+                    width: 50%
+
+            .place
+                background-image: none
+                width: 0
+                h2
+                    display: none
+            .lokalizacja
+                justify-content: center
+                margin: auto
+                text-align: center
+                font-size: 3.5vh
+            .place2
+
+                font-size: 3vh
+                height: 20vh
+
+                #mapa2
+                    display: flex
+                    flex-direction: row
+                    min-height: 0
+                    min-width: 0
+                    //padding-left: 9vw
+                    //margin: auto
+                    float: none
+                    width: 100vw
+                    height: auto
+        .stopka
+            bottom: 0

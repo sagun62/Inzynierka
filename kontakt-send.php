@@ -1,0 +1,250 @@
+<?php
+session_start();
+
+?>
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Grotti Cars</title>
+</head>
+
+<body>
+    <div class="home home2 ">
+        <div class="baner">
+            <div class="logo">
+                <a href="index.php"><img src="image/logo.png" alt="logo" id="logo"></a>
+            </div>
+            <div class="szukajka">
+
+                <i class="fas fa-search" onclick="show('znajdz')"></i>
+                <div id="znajdz" class="container p-3 " ondblclick="hide('znajdz')">
+                    <form id="main-searchForm" name="search" method="post" onkeyup="wyszukaj()">
+                        <input type="text" id="wyszukiwarka" name="wyszukiwarka" class="mx-auto pt-auto" placeholder="Wyszukaj" />
+                        <table id="myTable">
+
+                            <tr>
+                                <td><a href="index.php">Strona Główna</a></td>
+                                <hr>
+                            </tr>
+                            <tr>
+                                <td><a href="modele.php">Modele</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="modele.php">Serwis</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="oferta.php">Oferta</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="kontakt.php">Kontakt</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="dealer.php">Znajdź dealera</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="kontakt.php">Odwiedź salon</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="cennik.pdf" target="_blank">Pobierz cennik</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="skonfiguruj.php" target="_blank">Skonfiguruj</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="login.php" target="_blank">Konto klienta</a></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="user">
+
+                <a href="login.php">
+                    <?php
+                    if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true)) {
+                    ?>
+                        <p class="zmien ">Witaj <?= $_SESSION['user'] ?>&nbsp;</p> <i class="far fa-user"></i>
+                    <?php
+
+                    } else {
+                    ?>
+                        <p class="zmien">Zaloguj się </p> <i class="far fa-user"></i>
+                    <?php
+                    }
+                    ?>
+
+                </a>
+
+            </div>
+
+
+
+        </div>
+        <div class="nav">
+            <section>
+                <table id="menu">
+                    <tr>
+                        <td class="menu-nav"><a href="modele.php" class="">MODELE</a></td>
+                        <td class="menu-nav"><a href="serwis.php" class="">SERWIS</a></td>
+                        <td class="menu-nav"><a href="oferta.php" class="">OFERTA</a></td>
+                        <td class="menu-nav"><a href="kontakt.php" class="">KONTAKT</a></td>
+                        <td class="menu-nav"><a href="dealer.php" class="">ZNAJDŹ DEALERA</a></td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <div class="kontakt2 col-md-12 row">
+            <?php
+            error_reporting(0);
+            // odbieramy dane z formularza
+            $imie = $_POST['imie'];
+            $nazwisko = $_POST['nazwisko'];
+            $email = $_POST['email'];
+            $wiadomosc = $_POST['wiadomosc'];
+            $zgoda = $_POST['zgoda'];
+
+            require_once "connect.php";          
+            $mysqli = new mysqli($host, $db_user, $dp_password, $db_name);
+
+            //laczymy z baza
+            if ($mysqli->connect_errno) {
+                echo '<div class="lewa2 col-md-6 p-5">
+                <h1>Umów wizytę w salonie</h1>
+                <br>
+                <form action="kontakt-send.php" method="post" id="kontakt-form">
+                    Pan <input type="radio" name="Pan"> Pani <input type="radio" name="Pan"><br><br>
+                    Podaj Imię:<br>
+                    <input type="text" name="imie" class="umow" /><br>
+                    Podaj Nazwisko:<br>
+                    <input type="text" name="nazwisko" class="umow" /><br>
+                    Podaj E-mail:<br>
+                    <input type="text" name="email" class="umow" /><br>
+
+                    Miejsce na wiadomość:<br>
+                    <input type="text" name="wiadomosc" class="umow2" /><br>
+                    <p>Zgadzam się na przetwarzanie moich danych osobowych <input type="checkbox" name="zgoda"> </p>
+                    <input type="button" onclick="Wyczysc()" value="Wyczyść" class="kontakt-button mb-1" />
+                    <input type="submit" value="Wyślij" class="kontakt-button" />
+                </form>
+
+            </div>
+            <div class="prawa2 col-md-6 p-5 ">
+
+                <h1>nie dziala</h1>
+                <br><br>
+                
+
+            </div>
+                    ' . $mysqli->connect_error;
+                exit();
+            }
+
+            if ((empty($imie)) || (empty($nazwisko)) || (empty($zgoda)) || (empty($email)) || (empty($wiadomosc))) {
+                echo '<div class="lewa2 col-md-6 p-5">
+                <h1>Umów wizytę w salonie</h1>
+                <br>
+                <form action="kontakt-send.php" method="post" id="kontakt-form">
+                    Pan <input type="radio" name="Pan"> Pani <input type="radio" name="Pan"><br><br>
+                    Podaj Imię:<br>
+                    <input type="text" name="imie" class="umow" /><br>
+                    Podaj Nazwisko:<br>
+                    <input type="text" name="nazwisko" class="umow" /><br>
+                    Podaj E-mail:<br>
+                    <input type="text" name="email" class="umow" /><br>
+
+                    Miejsce na wiadomość:<br>
+                    <input type="text" name="wiadomosc" class="umow2" /><br>
+                    <p>Zgadzam się na przetwarzanie moich danych osobowych <input type="checkbox" name="zgoda"> </p>
+                    <input type="button" onclick="Wyczysc()" value="Wyczyść" class="kontakt-button mb-1" />
+                    <input type="submit" value="Wyślij" class="kontakt-button" />
+                </form>
+
+            </div>
+            <div class="prawa2 col-md-6 p-5">
+                <h1>Należy uzupełnić wszystkie pola formularza</h1>
+            </div>
+           
+            ';
+                $mysqli->close();
+            }
+            //zapytanie/polecenie do bazy
+            if ($result = $mysqli->query("INSERT INTO kontakt SET imie='$imie', nazwisko='$nazwisko', email='$email', wiadomosc='$wiadomosc'")) {
+                echo '<div class="lewa2 col-md-6 p-5">
+                <h1>Zapytane wysłane pomyślnie<br>Odpowiemy najszybciej jak to możliwe</h1>
+                
+
+            </div>
+            <div class="prawa2 col-md-6 p-5 ">
+
+                <h1>Kontakt</h1>
+                <br>
+                <table class="zadzwon">
+                    <tr>
+                        <td class="wlewo">Telefon:</td>
+                        <td class="wprawo">678 345 980</td>
+                    </tr>
+
+                </table>
+
+                <table class="zadzwon3">
+                    <tr>
+                        <td class="wlewo2">Adres:</td>
+                        <td class="wprawo2">Wolna 34, 57-569 Piaseczno</td>
+                    </tr>
+                </table>
+                <table class="zadzwon3">
+                    <tr>
+                        <td class="wlewo2">E-mail:</td>
+                        <td class="wprawo2">kontakt@grotticars.com</td>
+                    </tr>
+                </table>
+                <table class="zadzwon3">
+                    <tr>
+                        <td class="wlewo">Poniedziałek:</td>
+                        <td class="wprawo">09:00-18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="wlewo">Wtorek:</td>
+                        <td class="wprawo">09:00-17:00</td>
+                    </tr>
+                    <tr>
+                        <td class="wlewo">Środa:</td>
+                        <td class="wprawo">09:00-17:00</td>
+                    </tr>
+                    <tr>
+                        <td class="wlewo">Czwartek:</td>
+                        <td class="wprawo">09:00-17:00</td>
+                    </tr>
+                    <tr>
+                        <td class="wlewo">Piątek:</td>
+                        <td class="wprawo">09:00-18:00</td>
+                    </tr>
+                </table>
+
+            </div>
+            ';
+            }
+
+            $mysqli->close();
+
+            ?>
+
+
+        </div>
+        <div class="stopka" >
+            <p>&copy; Copyright 2021 Grotti Cars Kamil Sagan</p>
+        </div>
+    </div>
+</body>
+
+</html>

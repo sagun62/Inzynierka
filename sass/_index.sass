@@ -1,0 +1,871 @@
+body
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    font-family: 'Manrope', sans-serif
+
+.home
+    height: 100vh
+    font-family: 'Manrope', sans-serif
+    width: calc(100vw - (100vw - 100%))
+
+    .baner
+        height: 14vh
+        width: calc(100vw - (100vw - 100%))
+        background-color: #202020
+
+        .logo #logo
+            position: relative
+            height: 14vh
+            width: 22vw
+            left: 9vw
+            background-color: #202020
+            float: left
+        .szukajka
+            height: 14vh
+            width: 55vw
+            float: left
+            font-size: 15px
+            background-color: #202020
+            #znajdz
+                position: relative
+                z-index: 15
+
+                top: 15vh
+                background-color: #dcdcdc
+                border-radius: 10px
+                visibility: hidden
+
+                #close
+                    font-size: 25px
+                    color: red
+                    margin: 0
+                    right: 2vw
+                    padding: 0
+                    float: right
+                    position: absolute
+                    color: #202020
+
+                #wyszukiwarka
+                    background: none
+                    width: 48%
+                    border: none
+                    text-decoration: none
+                    outline: none
+            a
+                color: black
+                text-decoration: none
+
+            i
+                float: right
+                font-size: 4vh
+                padding: 5vh
+                color: #dcdcdc
+        .user
+            height: 7vh
+            width: 17vw
+            margin-top: 3vh
+            float: left
+            justify-content: center
+            display: flex
+            font-size: 15px
+            background-color: #202020
+            text-align: center
+
+            .zmien
+                text-decoration: none
+                display: table-row
+                color: #dcdcdc
+                font-size: 2.5vh
+            a
+                text-decoration: none
+
+        i
+            text-align: center
+            font-size: 3vh
+
+            color: #dcdcdc
+
+    .nav
+
+        height: 10vh
+        width: calc(100vw - (100vw - 100%))
+        background-color: #202020
+        border-top: 1px solid #dcdcdc
+        position: relative
+        .menu-nav
+
+            width: 100vw
+            height: 10vh
+            text-align: center
+
+            font-size: 2vh
+            font-family: 'Manrope', sans-serif
+            color: #dcdcdc
+            margin: 0
+            padding: 0
+            border: 0
+        a
+            text-decoration: none
+            color: #dcdcdc
+            &:hover
+                color: white
+                transition-duration: 0.5s
+
+    .slider
+        height: 76vh
+        width: calc(100vw - (100vw - 100%))
+        position: relative
+        background-repeat: no-repeat
+        background-size: cover
+        z-index: 2
+        background-color: #dcdcdc
+        text-align: center
+
+        .slider-but
+            height: 3.5vh
+            min-width: 14vw
+
+            background-color: white
+            text-align: center
+            font-size: 2.4vh
+            color: #101010
+            font-family: 'Manrope', sans-serif
+            text-decoration: none
+            background: linear-gradient(to right, #910a2d 50%, white 50%)
+            background-size: 200% 100%
+            background-position: right bottom
+            transition: all 2s ease
+            &:hover
+                background-position: left bottom
+                //border: solid #910a2d 2px
+                background-color: #910a2d
+                color: white
+
+    .lewa
+        position: relative
+        height: 10vh
+        width: 2vw
+        float: left
+        top: 35vh
+        z-index: 4
+
+        .prawa
+            position: relative
+            height: 10vh
+            width: 2vw
+            float: right
+            right: 1vw
+            top: 35vh
+            z-index: 4
+
+        .slajd
+            position: absolute
+            display: none
+            z-index: 3
+            max-height: 76vh
+            min-height: 76vh
+            min-width: 100vw
+            max-width: 100vw
+        .link
+            position: absolute
+            z-index: 4
+            background-color: white
+            text-align: center
+            font-size: 2.5vh
+            color: #101010
+            text-decoration: none
+            animation-name: link
+            animation-direction: reverse
+            animation-duration: 0.9s
+            left: 42vw
+            top: 5vh
+            padding: 2vh
+            border-radius: 1vh
+            display: none
+            &:hover
+                color: white
+                transition-duration: 0.5s
+                background-color: #910a2d
+        .link2
+
+            position: absolute
+            z-index: 2
+            background-color: white
+            text-align: center
+            font-size: 2.5vh
+            color: #101010
+            text-decoration: none
+            animation-name: link
+            animation-direction: reverse
+            animation-duration: 0.9s
+            left: 42vw
+            top: 5vh
+            padding: 2vh
+            border-radius: 1vh
+            &:hover
+                color: white
+                transition-duration: 0.5s
+                background-color: #910a2d
+
+        .napis
+            position: absolute
+            z-index: 4
+            display: none
+            color: #dcdcdc
+            font-size: 6vh
+            animation-name: napis
+            animation-direction: reverse
+            animation-duration: 0.8s
+            left: 33vw
+            top: 8vh
+            padding: 2vh
+
+        .napis2
+            position: absolute
+            z-index: 2
+            color: #dcdcdc
+            font-size: 6vh
+            animation-name: napis
+            animation-direction: reverse
+            animation-duration: 0.8s
+            left: 31vw
+            top: 8vh
+            padding: 2vh
+
+        @keyframes link
+            0%
+                top: 5vh
+
+            100%
+                top: 0vh
+        @keyframes napis
+            0%
+                top: 8vh
+
+            100%
+                top: 0vh
+    .fixed
+        height: 30vh
+        text-align: center
+        position: fixed
+        width: 3vw
+        top: 27vh
+        left: 1.7vw
+        z-index: 10
+        color: #910a2d
+        text-decoration: none
+
+        .drive_icon
+            z-index: 10
+            font-size: 40px
+            cursor: pointer
+            transition-duration: 2s
+
+            a
+                color: #910a2d
+            &:hover
+                transform: scale(1.1)
+                -webkit-transform: scale(1.1)
+                -moz-transform: scale(1.1)
+                width: 20vw
+                color: white
+                background-color: #910a2d
+                text-align: left
+                padding-left: 0.5vw
+                border-radius: 2.5vh
+                a
+                    color: white
+            #text
+                font-size: 20px
+                display: none
+                position: relative
+                text-decoration: none
+                top: -1vh
+                left: 1vw
+                color: white
+
+        .file_icon
+            z-index: 10
+            font-size: 40px
+            cursor: pointer
+            transition-duration: 2s
+            a
+                color: #910a2d
+            &:hover
+                transform: scale(1.1)
+                -webkit-transform: scale(1.1)
+                -moz-transform: scale(1.1)
+                width: 20vw
+                color: white
+                background-color: #910a2d
+                text-align: left
+                padding-left: 0.5vw
+                border-radius: 2.5vh
+                a
+                    color: white
+            #text2
+                font-size: 20px
+                display: none
+                position: relative
+                text-decoration: none
+                top: -1vh
+                left: 1vw
+                color: white
+        .prep_icon
+            z-index: 10
+            font-size: 40px
+            cursor: pointer
+            transition-duration: 2s
+            a
+                color: #910a2d
+            &:hover
+                transform: scale(1.1)
+                -webkit-transform: scale(1.1)
+                -moz-transform: scale(1.1)
+                width: 20vw
+                color: white
+                background-color: #910a2d
+                text-align: left
+                padding-left: 0.5vw
+                border-radius: 2.5vh
+                a
+                    color: white
+            #text3
+                font-size: 20px
+                display: none
+                position: relative
+                text-decoration: none
+                top: -1vh
+                left: 1vw
+                color: white
+        .chat_icon
+            z-index: 10
+            font-size: 39px
+            cursor: pointer
+            transition-duration: 2s
+            a
+                color: #910a2d
+            &:hover
+                transform: scale(1.1)
+                -webkit-transform: scale(1.1)
+                -moz-transform: scale(1.1)
+                width: 20vw
+                color: white
+                background-color: #910a2d
+                text-align: left
+                padding-left: 0.5vw
+                border-radius: 2.5vh
+                a
+                    color: white
+            #text4
+                font-size: 20px
+                display: none
+                position: relative
+                text-decoration: none
+                top: -1vh
+                left: 1vw
+                color: white
+
+    .text
+
+        width: calc(100vw - (100vw - 100%))
+        background-color: #202020
+        font-family: 'Manrope', sans-serif
+        font-size: 2vh
+        color: #dcdcdc
+        text-align: center
+        padding-top: 1vh
+
+    .kafelki
+        //height: 55vh
+        display: flex
+        width: 75vw
+        margin: auto
+        font-family: 'Manrope', sans-serif
+        font-size: 3vh
+        text-align: center
+        background-color: #fff
+
+        .lewy
+            width: 25vw
+            background-color: #202020
+            overflow: hidden
+            .test2
+                width: 25vw
+
+        .lewy img
+            transition: all 0.5s ease-in-out
+
+            &:hover
+                -webkit-transform: scale(1.15)
+                -ms-transform: scale(1.15)
+                transform: scale(1.15)
+
+        .srodek
+            width: 24.8vw
+            overflow: hidden
+            border-right: 0.2vw solid #dcdcdc
+            border-left: 0.2vw solid #dcdcdc
+            background-color: #202020
+
+            .test2
+                width: 25vw
+
+        .srodek img
+            transition: all 0.5s ease-in-out
+            &:hover
+                -webkit-transform: scale(1.15)
+                -ms-transform: scale(1.15)
+                transform: scale(1.15)
+
+        .prawy
+            width: 25vw
+            overflow: hidden
+            background-color: #202020
+
+            .test2
+                width: 25vw
+
+        .prawy img
+            transition: all 0.5s ease-in-out
+            &:hover
+                -webkit-transform: scale(1.15)
+                -ms-transform: scale(1.15)
+                transform: scale(1.15)
+        .t-lewy
+            width: 25vw
+            height: 9.9vh
+            background-color: #202020
+            color: #dcdcdc
+            border-bottom: 0.1vw solid #dcdcdc
+            float: left
+        .t-srodek
+            width: 24.8vw
+            height: 9.9vh
+            background-color: #202020
+            color: #dcdcdc
+            float: left
+            border-bottom: 0.1vw solid #dcdcdc
+            border-right: 0.2vw solid #dcdcdc
+            border-left: 0.2vw solid #dcdcdc
+        .t-prawy
+            width: 25vw
+            height: 9.9vh
+            background-color: #202020
+            border-bottom: 0.1vw solid #dcdcdc
+            color: #dcdcdc
+            float: left
+
+    .movie
+
+        height: 100vh
+        width: calc(100vw - (100vw - 100%))
+        background-color: #202020
+        text-align: center
+
+        h1
+            margin: 0
+            padding: 20px
+            color: white
+
+        #video
+            height: 80vh
+            position: relative
+            z-index: -10
+            margin: auto
+            width: calc(100vw - (100vw - 100%))
+
+        .wybierz_film
+            width: 31vw
+            height: 7vh
+            text-align: center
+            margin: auto
+            align-items: center
+            justify-items: center
+
+            .next
+                background-color: #dcdcdc
+                height: 7vh
+                width: 10vw
+                cursor: pointer
+                padding-top: 0.8rem
+                float: left
+                transition-duration: 1s
+                &:hover
+                    background-color: #910a2d
+                    color: white
+
+            #next2
+                background-color: #dcdcdc
+                height: 7vh
+                width: 10vw
+                cursor: pointer
+                float: left
+                padding-top: 0.8rem
+                margin-left: 0.5vw
+                margin-right: 0.5vw
+                animation: miganie
+                transition-duration: 1s
+                &:hover
+                    background-color: #910a2d
+                    color: white
+
+                @keyframes miganie
+                    0%
+
+                        opacity: 0.1
+                        background-color: #910a2d
+
+                    100%
+
+                        opacity: 0.9
+
+            #next3
+                background-color: #dcdcdc
+                height: 7vh
+                width: 10vw
+                cursor: pointer
+                padding-top: 0.8rem
+                float: left
+                transition-duration: 1s
+                &:hover
+                    background-color: #910a2d
+                    color: white
+
+        #technologia-opis
+            height: 20vh
+            width: 69vw
+            border: 2px #FAF5F5 solid
+            border-radius: 10px
+            color: white
+            position: absolute
+            margin-left: 14.85vw
+            opacity: 0.6
+            z-index: 10
+            animation: wjazd 5s
+
+            display: none
+
+            @keyframes wjazd
+                0%
+                    top: 0vh
+                    opacity: 0.1
+
+                100%
+                    top: 17.5vh
+                    opacity: 0.6
+        #video
+            height: 80vh
+
+    .modele2
+        height: 80vh
+        width: 100vw
+        background-color: #dcdcdc
+        text-align: center
+        padding-top: 8vh
+        padding-bottom: 8vh
+        left: -50%
+    .modele
+
+        height: 80vh
+        width: calc(100vw - (100vw - 100%))
+        background-color: #dcdcdc
+        text-align: center
+        padding-top: 8vh
+        padding-bottom: 8vh
+
+        .guzik
+            background: none
+            border: 2px solid #000
+            text-transform: uppercase
+            padding: 12px 20px
+            min-width: 200px
+            margin: 10px
+            cursor: pointer
+            transition: color 0.4s linear
+            position: relative
+            &:hover
+                color: #fff
+            &::before
+                content: ""
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background: #000
+                z-index: -1
+                transition: transform 0.5s
+                transform-origin: 0 0
+                transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7)
+                transform: scaleX(0)
+            &:hover::before
+                transform: scaleX(1)
+
+        .gama-p1
+
+            display: inline-block
+            position: relative
+            height: 80vh
+            width: 22vw
+            animation-name: gama-move
+            animation-direction: reverse
+            animation-duration: 0.8s
+
+            .gama2
+                display: inline-block
+                height: 40vh
+                width: 22vw
+                padding-top: 6vh
+                #test
+                    max-width: 100%
+
+                a
+                    text-decoration: none
+                    color: #202020
+                    font-size: 3vh
+                    font-family: 'Manrope', sans-serif
+                ////
+
+                ////
+    .but_pytaj
+        height: 6vh
+        width: 14vw
+
+        border: solid #910a2d 2px
+        background-color: white
+        text-align: center
+        font-size: 2.4vh
+        color: #101010
+        font-family: 'Manrope', sans-serif
+        text-decoration: none
+        max-width: 100%
+        background: linear-gradient(to right, #910a2d 50%, white 50%)
+        background-size: 200% 100%
+        background-position: right bottom
+        transition: all 2s ease
+        &:hover
+            background-position: left bottom
+            border: solid #910a2d 2px
+            background-color: #910a2d
+            color: white
+        .gama-p2
+
+            display: inline-block
+            position: relative
+            height: 80vh
+            width: 22vw
+            animation-name: gama-move
+            animation-direction: reverse
+            animation-duration: 0.8s
+
+            .gama2
+                display: inline-block
+                height: 40vh
+                width: 22vw
+                padding-top: 6vh
+
+                a
+                    text-decoration: none
+                    color: #202020
+                    font-size: 3vh
+                    font-family: 'Manrope', sans-serif
+                .but_pytaj
+                    height: 6vh
+                    width: 14vw
+                    border: solid #910a2d 2px
+                    background-color: white
+                    text-align: center
+                    font-size: 2.4vh
+                    color: #101010
+                    font-family: 'Manrope', sans-serif
+                    text-decoration: none
+
+                    background: linear-gradient(to right, #910a2d 50%, white 50%)
+                    background-size: 200% 100%
+                    background-position: right bottom
+                    transition: all 2s ease
+                    &:hover
+                        background-position: left bottom
+                        border: solid #910a2d 2px
+                        background-color: #910a2d
+                        color: white
+        .gama-p3
+
+            display: inline-block
+            position: relative
+            height: 80vh
+            width: 22vw
+            animation-name: gama-move
+            animation-direction: reverse
+            animation-duration: 0.8s
+
+            .gama2
+                display: inline-block
+                height: 40vh
+                width: 22vw
+                padding-top: 6vh
+
+                a
+                    text-decoration: none
+                    color: #202020
+                    font-size: 3vh
+                    font-family: 'Manrope', sans-serif
+                .but_pytaj
+                    height: 6vh
+                    width: 14vw
+                    border: solid #910a2d 2px
+                    background-color: white
+                    text-align: center
+                    font-size: 2.4vh
+                    color: #101010
+                    font-family: 'Manrope', sans-serif
+                    text-decoration: none
+
+                    background: linear-gradient(to right, #910a2d 50%, white 50%)
+                    background-size: 200% 100%
+                    background-position: right bottom
+                    transition: all 2s ease
+                    &:hover
+                        background-position: left bottom
+                        border: solid #910a2d 2px
+                        background-color: #910a2d
+                        color: white
+        .gama-p44
+            display: inline-block
+            position: relative
+            height: 80vh
+            width: 22vw
+            left: -50%
+        .gama-p4
+
+            display: inline-block
+            position: relative
+            height: 80vh
+            width: 22vw
+
+            .gama2
+                display: inline-block
+                height: 40vh
+                width: 22vw
+                padding-top: 6vh
+
+                a
+                    text-decoration: none
+                    color: #202020
+                    font-size: 3vh
+                    font-family: 'Manrope', sans-serif
+                .but_pytaj
+                    height: 6vh
+                    width: 14vw
+                    border: solid #910a2d 2px
+                    background-color: white
+                    text-align: center
+                    font-size: 2.4vh
+                    color: #101010
+                    font-family: 'Manrope', sans-serif
+                    text-decoration: none
+
+                    background: linear-gradient(to right, #910a2d 50%, white 50%)
+                    background-size: 200% 100%
+                    background-position: right bottom
+                    transition: all 2s ease
+                    &:hover
+                        background-position: left bottom
+                        border: solid #910a2d 2px
+                        background-color: #910a2d
+                        color: white
+
+        // #table2
+        //     margin: auto
+        //     height: 80vh
+        //     width: 90vw
+        //     .tab2
+        //         height: 40vh
+        //         width: 90vw
+        //         text-align: center
+        //         font-size: 2vh
+        //         font-family: 'Manrope', sans-serif
+        //         margin: 0
+        //         padding: 0
+        //         border: 0
+
+    .stopka
+
+        height: 6vh
+        width: calc(100vw - (100vw - 100%))
+        color: #dcdcdc
+        text-align: center
+
+        background-color: #202020
+.size
+    width: 64vw
+    height: 80vh
+    .sliderImg
+        width: 100%
+        height: 100%
+
+@media screen and (max-width: 1250px)
+    .gama-p1
+        width: 60vw
+    .kafelki
+        p
+            font-size: 0.7rem
+
+    .home
+        .baner
+            .user
+                margin-top: 1vh
+            .szukajka
+                i
+                    font-size: 3vh
+                    padding-top: 5.5vh
+        .fixed
+            .drive_icon
+                font-size: 30px
+            .file_icon
+                font-size: 30px
+            .prep_icon
+                font-size: 30px
+            .chat_icon
+                font-size: 30px
+                //display: none
+
+        .movie
+            .wybierz_film
+                width: 91vw
+                height: 10vh
+                .next
+                    width: 30vw
+                    padding-bottom: 2.5rem
+                    height: 5vh
+
+                #next2
+                    width: 30vw
+                    height: 5vh
+                    padding-bottom: 2.5rem
+                    margin-left: 0.5vw
+                    margin-right: 0.5vw
+                #next3
+                    width: 30vw
+                    padding-bottom: 2.5rem
+                    height: 5vh
+            #video
+                height: 59vh
+            
+a
+    text-decoration: none
+.ff
+    color: black
+
+@media screen and (min-width: 450px)
+    .home
+        .slider
+            .carousel-container
+                max-width: 980px
+
+                width: 62%
+                .carousel
+                    .carousel-screen
+                        margin-top: -3rem
